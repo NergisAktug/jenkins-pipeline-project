@@ -1,6 +1,6 @@
 node {
     stage("Git Clone"){
-    git credentialsId: 'GIT_HUB_CREDENTIALS',url:'https://github.com/NergisAktug/bootcamp.git'
+    git credentialsId: 'GIT_HUB_CREDENTIALS',url:'https://github.com/NergisAktug/jenkins-pipeline-project.git'
     }
 
     stage("Kubernetes DEV Deployment"){
