@@ -1,9 +1,9 @@
 node {
     stage("Git Clone"){
-    git credentialsId: 'GIT_HUB_CREDENTIALS',url:'https://github.com/oguzzarci/forbootcamp.git'
+    git credentialsId: 'GIT_HUB_CREDENTIALS',url:'https://github.com/NergisAktug/bootcamp.git'
     }
     stage("Docker Build"){
-    sh 'docker build -t oguzzarci/babootcamp:v${BUILD_NUMBER} .'
+    sh 'docker build -t nergiss/babootcamp:v${BUILD_NUMBER} .'
     sh 'docker images'
     }
     stage("Docker Login"){
@@ -14,7 +14,7 @@ node {
     }
     }
     stage("Docker Push"){
-    sh 'docker push oguzzarci/babootcamp:v${BUILD_NUMBER}'
+    sh 'docker push nergiss/babootcamp:v${BUILD_NUMBER}'
 }
     stage("Kubernetes DEV Deployment"){
     
