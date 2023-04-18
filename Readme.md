@@ -13,9 +13,7 @@ sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sour
 sudo apt update
 
 if you  take error following when process update:
- <p align="right">
-  <img src="error-installtion.PNG" title="hover text">
-</p>
+![Alt text](/error.png)
 
 Run command following:
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 5BA31D57EF5975CA
