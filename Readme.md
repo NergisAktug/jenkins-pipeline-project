@@ -5,24 +5,33 @@ https://git-scm.com/download/win
 
 # Jenkins
 ```
-sudo apt-get install openjdk-8-jdk
-wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
-sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
 sudo apt update
 sudo apt upgrade
+sudo apt install openjdk-11-jdk
+wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
+sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+sudo apt update
+
+if you  take error following when process update:
+ <p align="right">
+  <img src="error-installtion.PNG" title="hover text">
+</p>
+
+Run command following:
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 5BA31D57EF5975CA
+sudo apt update
+sudo apt install <package-name>
+
+
 sudo apt install jenkins
 sudo systemctl start jenkins
-sudo ufw allow 8080
-sudo ufw allow 22/tcp
-```
+sudo systemctl enable jenkins
 
-```
-sudo ufw status : Status: inactive ise
-sudo ufw enable
-sudo ufw default deny
-sudo ufw allow 22/tcp
-sudo ufw allow 8443/tcp
-```
+Step 6: Access Jenkins Web Interface
+Jenkins web interface runs on port 8080 by default. Open a web browser and navigate to http://<your_server_ip>:8080. You will be prompted to enter the initial admin password, which you can find on your Ubuntu machine by running the following command:
+
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
 
 ## Jenkins IP and Default Pasword
 ```
